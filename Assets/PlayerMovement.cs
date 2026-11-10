@@ -102,6 +102,11 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+  
+    public void Bounce(float force)
+    {
+        velocity.y = Mathf.Sqrt(force * -2f * gravity);
+    }
 
     void CheckFall()
     {
